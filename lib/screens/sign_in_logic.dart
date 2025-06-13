@@ -47,13 +47,15 @@ class _SignInLogicState extends State<SignInLogic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: black,
-      body: const Center(
-        child: Image(
-          image: AssetImage('assets/images/logic_screen/logic_screen.png'),
-          fit: BoxFit.fill,
-        ),
-      ),
+      backgroundColor: primary,
+      body: Center(
+          child: Text(
+        'PITCHMATTER',
+        style: Theme.of(context).textTheme.displayMedium!.copyWith(
+              fontWeight: FontWeight.bold,
+              color: white,
+            ),
+      )),
     );
   }
 }

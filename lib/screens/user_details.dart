@@ -14,7 +14,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:pitchmatter_assignment/model/user_model.dart';
 import 'package:pitchmatter_assignment/provider/user_provider.dart';
 import 'package:pitchmatter_assignment/services/share_services.dart';
-import 'package:pitchmatter_assignment/sign_in_logic.dart';
+import 'package:pitchmatter_assignment/screens/sign_in_logic.dart';
 import 'package:pitchmatter_assignment/utils/colors.dart';
 import 'package:pitchmatter_assignment/widgets/toast_widget.dart';
 import 'package:provider/provider.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pitchmatter_assignment/utils/colors.dart';
 
-ThemeData HomlyThemeData() {
+ThemeData assignmentThemeData() {
   return ThemeData(
     splashColor: transparent,
     highlightColor: transparent,
