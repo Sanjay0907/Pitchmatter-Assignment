@@ -1,0 +1,51 @@
+name: pitchmatter_assignment
+description: "A new Flutter project."
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  firebase_auth: ^5.6.0
+  flutter_native_splash: ^2.4.4
+  page_transition: ^2.2.1
+  provider: ^6.1.5
+  dio: ^5.8.0+1
+  share_plus: ^11.0.0
+  firebase_core: ^3.14.0
+  flutter_styled_toast: ^2.2.1
+  app_links: ^6.4.0
+  flutter_svg: ^2.1.0
+  qr_flutter: ^4.1.0
+  path_provider: ^2.1.5
+  permission_handler: ^12.0.0+1
+  url_launcher: ^6.3.1
+  # flutter_native_splash: ^2.4.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/signup/
+    - assets/images/splash_screen/
+    - assets/images/logic_screen/
+    - assets/images/svg/
+    - assets/fonts/
+
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Medium.ttf

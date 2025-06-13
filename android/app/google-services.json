@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "377184568652",
+    "project_id": "pitchmatter-assignment",
+    "storage_bucket": "pitchmatter-assignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377184568652:android:32dc65db18906c47ddbbe9",
+        "android_client_info": {
+          "package_name": "com.example.pitchmatter_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlchX4wjn-H6ASJNynmwkvIs5ocYzfIOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
