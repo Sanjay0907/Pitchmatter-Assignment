@@ -14,6 +14,9 @@ class UserProvider extends ChangeNotifier {
   List<UserModel> get users => _displayedUsers;
 
   Future<void> loadUsers() async {
+    _allUsers.clear();
+    _displayedUsers.clear();
+    notifyListeners();
     _allUsers = await _apiService.fetchUsers();
     _displayedUsers.clear();
     _currentPage = 0;

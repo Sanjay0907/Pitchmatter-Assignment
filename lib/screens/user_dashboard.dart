@@ -6,8 +6,17 @@ import 'package:pitchmatter_assignment/screens/user_details.dart';
 import 'package:pitchmatter_assignment/utils/colors.dart';
 import 'package:provider/provider.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  refresh() async {
+    await context.read<UserProvider>().loadUsers();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,63 +69,69 @@ class DashboardScreen extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   );
                 } else {
-                  return ListView.builder(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: width * 0.02,
-                      vertical: height * 0.02,
-                    ),
-                    itemCount: provider.users.length,
-                    itemBuilder: (context, index) {
-                      final UserModel user = provider.users[index];
-                      return Container(
-                        margin: EdgeInsets.symmetric(
-                          vertical: height * 0.005,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: primary.withOpacity(
-                              0.5,
-                            ),
+                  return RefreshIndicator(
+                    onRefresh: () => refresh(),
+                    child: ListView.builder(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.02,
+                        vertical: height * 0.02,
+                      ),
+                      itemCount: provider.users.length,
+                      itemBuilder: (context, index) {
+                        final UserModel user = provider.users[index];
+                        return Container(
+                          margin: EdgeInsets.symmetric(
+                            vertical: height * 0.005,
                           ),
-                          borderRadius: BorderRadius.circular(
-                            10,
-                          ),
-                        ),
-                        child: ListTile(
-                          title: Text(
-                            user.name,
-                            style:
-                                Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: textColor,
-                                    ),
-                          ),
-                          subtitle: Text(
-                            user.company!.name,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: grey,
-                                ),
-                          ),
-                          trailing: Icon(
-                            Icons.chevron_right,
-                            color: textColor,
-                          ),
-                          onTap: () => Navigator.push(
-                            context,
-                            PageTransition(
-                              child: UserDetailScreen(
-                                userId: user.id,isDeepLink: false,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: primary.withOpacity(
+                                0.5,
                               ),
-                              type: PageTransitionType.rightToLeft,
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              10,
                             ),
                           ),
-                        ),
-                      );
-                    },
+                          child: ListTile(
+                            title: Text(
+                              user.name,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: textColor,
+                                  ),
+                            ),
+                            subtitle: Text(
+                              user.company!.name,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: grey,
+                                  ),
+                            ),
+                            trailing: Icon(
+                              Icons.chevron_right,
+                              color: textColor,
+                            ),
+                            onTap: () => Navigator.push(
+                              context,
+                              PageTransition(
+                                child: UserDetailScreen(
+                                  userId: user.id,
+                                  isDeepLink: false,
+                                ),
+                                type: PageTransitionType.rightToLeft,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   );
                 }
               })),
