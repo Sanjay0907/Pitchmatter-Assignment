@@ -1,16 +1,16 @@
-# pitchmatter_assignment
+# Pitchmatter Assignment
 
-A new Flutter project.
+A user application with the following features
+- Email Authentication (Firebase)
+- Splash Screen
+- Pagination (Lazy Loading)
+- Pull to refresh page
+- Search bar
+- Deep Link (Profile sharing)
+- Barcode Sharing
+- Open user location in Maps
+- Open user website
 
-## Getting Started
+## Application Screens
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Pitchmatter Asssignment](https://github.com/user-attachments/assets/6cac2036-e8b2-4090-af9a-3ac7d3e045ca)
